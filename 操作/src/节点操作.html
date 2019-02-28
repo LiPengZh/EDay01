@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+            <p>01</p>
+            <p>02</p>
+            <p>03</p>
+    </div>
+    <button id="button01">提交</button>
+    <button id="button02">删除节点</button>
+    <script>
+        // var  obox=document.createElement("div");
+        // document.body.appendChild(obox);
+        // var op=document.createElement("p");
+        // op.innerHTML="今天是星期四";
+        // obox.appendChild(op);
+
+
+        // var oul =document.createElement("ul");
+        // for(var i=0;i<10;i++){
+        //     var oli=document.createElement("li");
+        //     oli.innerHTML="项目"+i;
+        //     oul.appendChild(oli);
+        // }
+        // document.body.appendChild(oul); 
+
+        var odiv=document.getElementById("button01");
+        odiv.onclick=function(){
+            var ops=document.createElement("p");
+            ops.innerHTML="04";
+            var odiv=document.getElementsByTagName("div")[0];
+            var op1=odiv.getElementsByTagName("p")[1];
+            odiv.insertBefore(ops,op1);
+        }
+        var odiv=document.getElementById("button02");
+        odiv.onclick=function(){
+            var odiv=document.getElementsByTagName("div")[0];
+            var op1=odiv.getElementsByTagName("p")[1];
+            odiv.removeChild(op1);
+            
+        }
+        </script>
+</body>
+</html>

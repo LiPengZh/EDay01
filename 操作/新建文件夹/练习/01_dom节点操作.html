@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+            <p>01</p>
+            <p>02</p>
+            <p>03</p>
+    </div>
+    <button id="btn">提交</button>
+    <button id="btn1">删除节点</button>
+    <script>
+        var obox=document.createElement("div");
+        // obox.appendTo("body");  //jq里的被动添加
+        document.body.appendChild(obox);   //js里的被动添加到body里；
+        var op=document.createElement("p");
+        op.innerHTML="今天天气不错哈";
+        obox.appendChild(op);   //将新的子集添加到某一个父级
+
+        var oul=document.createElement("ul");
+        for(var i=0;i<10;i++){     
+            var oli=document.createElement("li");
+            oli.innerHTML="项目"+i;
+            oul.appendChild(oli);
+        }
+        document.body.appendChild(oul);     //循环10次，并且添加到body里
+
+        var img=new Image();   //创建new Image()图片的方法
+        img.src="4782ae975d179e5a8fb2ad1f277cc9d8.png";
+        obox.appendChild(img);
+
+
+        var my_btn=document.getElementById("btn");
+        my_btn.onclick=function(){
+            var ops=document.createElement("p");
+            ops.innerHTML="04";    //创建新的标签
+            var odiv=document.getElementsByTagName("div")[0];   //获取div
+            var op1=odiv.getElementsByTagName("p")[1];      //获取div里的一个p
+            odiv.insertBefore(ops,op1);    //在div,将新创建的p,添加到哪一个p之前
+        }
+
+
+          var odiv=document.getElementById("btn1");
+          odiv.onclick=function(){
+            var odiv=document.getElementsByTagName("div")[0]; 
+            var op1=odiv.getElementsByTagName("p")[1];
+            odiv.removeChild(op1);   //只有父级可以删除子集，自己删除不了自己
+          }
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+var obj = {
+    name:"明明",
+    sex:"男",
+    age:12,
+    hobby:["喝酒","抽烟","烫头"]
+ };
+ console.log(obj.hobby[2])

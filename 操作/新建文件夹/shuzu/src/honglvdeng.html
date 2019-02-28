@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            background: url(./honglvdeng.png) no-repeat;
+        }
+    </style>
+
+</head>
+<body>
+    <script>
+    function Honglvdeng(){
+        this.dom=null;//dom方法
+        this.color=0;//颜色色值参数
+        this.init();//要点击的事件
+        this.bindEvent()//事件的监听
+    }
+    Honglvdeng.prototype.init=function(){
+        this.dom=document.createElement("div");
+        document.body.appendChild(this.dom);
+    }
+    Honglvdeng.prototype.bindEvent=function(){
+        // console.log(this.color);
+        var a=this
+        var b=this.dom.onclick=function(){
+            a.color++
+            if(a.color>2){
+                a.color=0;
+
+            }
+            a.fun(a.color);
+        }
+    }
+</script>
+</body>
+</html>
